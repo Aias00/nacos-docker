@@ -29,7 +29,7 @@ RUN set -x \
     && yum update -y \
     && yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel iputils nc vim libcurl \
     && yum clean all
-ADD /Users/aias/Work/github/nacos/distribution/target/nacos-server-*.tar.gz /home/
+ADD nacos-server-2.2.3.tar.gz /home/
 RUN rm -rf  /home/nacos/bin/* /home/nacos/conf/*.properties /home/nacos/conf/*.example /home/nacos/conf/nacos-mysql.sql \
     && ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime && echo $TIME_ZONE > /etc/timezone
 
